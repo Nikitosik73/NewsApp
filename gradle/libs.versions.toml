@@ -1,6 +1,6 @@
 [versions]
 agp = "8.4.2"
-kotlin = "1.9.24"
+kotlin = "1.9.21"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -46,6 +46,8 @@ room-compiler = { group = "androidx.room", name = "room-compiler", version.ref =
 coil-core = { group = "io.coil-kt", name = "coil-compose", version.ref = "coilVersion" }
 
 kodein-core = { group = "org.kodein.di", name = "kodein-di", version.ref = "kodeinVersion" }
+kodein-di-androidx = { group = "org.kodein.di", name = "kodein-di-framework-android-x", version.ref = "kodeinVersion" }
+kodein-di-compose = { group = "org.kodein.di", name = "kodein-di-framework-compose", version.ref = "kodeinVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

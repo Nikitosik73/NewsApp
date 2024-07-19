@@ -20,6 +20,11 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        val key = property("apiKey") ?: error(
+            message = "You should add apikey into gradle.properties"
+        )
+        buildConfigField(type = "String", name = "NEWS_API_KEY", value = "\"$key\"")
     }
 
     buildTypes {
@@ -32,14 +37,15 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.7"
@@ -81,7 +87,9 @@ dependencies {
     implementation(libs.coil.core)
 
     implementation(libs.room.core)
-    implementation(libs.room.compiler)
+    ksp(libs.room.compiler)
 
     implementation(libs.kodein.core)
+    implementation(libs.kodein.di.androidx)
+    implementation(libs.kodein.di.compose)
 }
