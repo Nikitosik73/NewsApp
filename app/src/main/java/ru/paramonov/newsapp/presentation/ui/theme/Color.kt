@@ -1,4 +1,4 @@
-package ru.paramonov.newsapp.ui.theme
+package ru.paramonov.newsapp.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
